@@ -65,7 +65,6 @@ end
 def runner
 
   welcome()
-  binding.pry
   initial_round()
   # code runner here
   #welcome()
