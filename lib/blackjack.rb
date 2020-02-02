@@ -1,3 +1,4 @@
+require 'pry'
 def welcome
   # code #welcome here
   puts 'Welcome to the Blackjack Table'
@@ -62,13 +63,22 @@ end
 #####################################################
 
 def runner
-  # code runner here
-  welcome
-  initial_round
-  current_total = 0
-  while current_total <= 21
-    current_total = hit?(current_total)
-    display_card_total(current_total)
+  welcome()
+  current_card_total = initial_round()
+  until current_card_total > 21
+    current_card_total = hit?(current_card_total)
+    display_card_total(current_card_total)
   end
-end_game
+end_game(current_card_total)
+
+  # code runner here
+  #welcome()
+  #initial_round()
+  #current_total = 0
+  #while current_total <= 21
+
+  #  current_total = hit?(current_total)
+  #  display_card_total(current_total)
+  #end
+#end_game()
 end
